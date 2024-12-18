@@ -1,6 +1,8 @@
 package com.API2024.project.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 @Entity
@@ -14,8 +16,11 @@ public class UsuariosModel {
     @NotNull(message = "O atributo nome é obrigatorio!")
     private String nome;
 
+    @NotNull(message = "O Atributo Usuário é Obrigatório!")
+    @Email(message = "O Atributo Usuário deve ser um email válido!")
     private String usuario;
 
+    @NotBlank(message = "O Atributo senha é obrigatório!")
     private String senha;
 
     private String redeSocial;
