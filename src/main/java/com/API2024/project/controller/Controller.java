@@ -3,6 +3,9 @@ package com.API2024.project.controller;
 import com.API2024.project.model.UsuariosModel;
 import com.API2024.project.repository.UsuarioRepository;
 import com.API2024.project.service.ServiceUsuario;
+
+import jakarta.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -30,5 +33,10 @@ public class Controller {
         return usuarioRepository.findById(id)
                 .map(resposta -> ResponseEntity.ok(resposta))
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @PostMapping("/cadastrar")
+    public ResponseEntity<UsuariosModel> postUsuario(@RequestBody @Valid UsuariosModel usuario){
+      return ServiceUsuario.ca
     }
 }
