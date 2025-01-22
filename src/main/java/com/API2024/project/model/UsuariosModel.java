@@ -11,25 +11,21 @@ public class UsuariosModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-
+    private long id;
     @NotNull(message = "O atributo nome é obrigatorio!")
     private String nome;
-
     @NotNull(message = "O Atributo Usuário é Obrigatório!")
     @Email(message = "O Atributo Usuário deve ser um email válido!")
     private String usuario;
-
     @NotBlank(message = "O Atributo senha é obrigatório!")
     private String senha;
-
     private String redeSocial;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
